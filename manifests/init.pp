@@ -15,7 +15,7 @@ class tomcat (
   $security     = $tomcat::params::security,
   $logfile_days = $tomcat::params::logfile_days,
   $jvm_tmp      = $tomcat::params::jvm_tmp,
-  $authbind     = $tomcat::params::authbind
+  $authbind     = $tomcat::params::authbind,
   $http_port = "8080",
 ) inherits tomcat::params {
 
