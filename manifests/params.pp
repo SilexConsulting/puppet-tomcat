@@ -6,8 +6,16 @@
 class tomcat::params {
   case $::osfamily {
     'Debian': {
-      $package_name = 'tomcat7'
-      $service_name = 'tomcat7'
+      $version      = 6,
+      $java_home    = undef,
+      $java_opts    = '-Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC',
+      $jsp_compiler = undef,
+      $security     = undef,
+      $logfile_days = undef,
+      $jvm_tmp      = undef,
+      $authbind     = undef
+      $package_name = "tomcat${version}"
+      $service_name = "tomcat${version}"
     }
     default: {
       fail("${::operatingsystem} not supported")
