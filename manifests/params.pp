@@ -6,7 +6,7 @@
 class tomcat::params {
   case $::osfamily {
     'Debian': {
-      $version      = 6
+      $version      = 7
       $java_home    = undef
       $java_opts    = '-Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC'
       $jsp_compiler = undef
