@@ -4,8 +4,6 @@
 # It ensure the service is running
 #
 class tomcat::service {
-  include tomcat::params
-
   service { $tomcat::params::service_name:
     ensure     => running,
     enable     => true,

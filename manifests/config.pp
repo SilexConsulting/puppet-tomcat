@@ -2,14 +2,13 @@
 #
 # This class is called from tomcat
 #
-class tomcat::config(
-  $http_port,
-) {
+class tomcat::config inherits tomcat::params {
 
-  file { '/etc/tomcat7/server.xml':
+  file { "/etc/tomcat${tomcat::params::version}/server.xml":
     content => template( 'tomcat/server.xml' )
   }
-  file { "/etc/default/tomcat${tomcat::version}":
+
+  file { "/etc/default/tomcat${tomcat::params::version}":
     ensure  => file,
     content => template('tomcat/tomcat_default.erb'),
   }
