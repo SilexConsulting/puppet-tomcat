@@ -11,7 +11,6 @@ class tomcat inherits tomcat::params {
 
   class { 'tomcat::install': } ->
   class { 'tomcat::config': } ->
-  class { 'tomcat::service': } ->
-  Class['tomcat']
+  class { 'tomcat::service': }
 
 }
