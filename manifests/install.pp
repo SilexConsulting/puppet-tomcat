@@ -1,7 +1,9 @@
 # == Class tomcat::install
 #
-class tomcat::install {
-  package { $tomcat::params::package_name:
+class tomcat::install (
+  $package_name,
+) {
+  package { $package_name:
     ensure => present,
   }
 }
