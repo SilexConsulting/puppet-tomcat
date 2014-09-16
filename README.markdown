@@ -1,18 +1,19 @@
-# Solr Module
+# Tomcat Module
 
 [![Build Status](https://travis-ci.org/vamsee/puppet-solr.png)](https://travis-ci.org/vamsee/puppet-solr)
 
-Puppet module to install and configure tomcat7 on Debian systems.  Allows you to customise the http port.
+Puppet module to install and configure tomcat on Debian systems.  Allows you to customise the http port.
 
 ## Quick Start
 
-To install tomcat 7 with the default settings add this into your node:
+To install Tomcat 7 with the default settings add this into your node:
 
     include tomcat
 
-To run tomcat on a different port, you can use:
+To run tomcat on a different port, or install a different version, use:
 
-    class { 'tomcat' :
+    class { 'tomcat':
+		version			=> '6',
         http_port       => '8888',
     }
 
@@ -20,6 +21,7 @@ To run tomcat on a different port, you can use:
 
  * Support other platforms
  * Tests
+ * Install Tomcat 6 and Tomcat 7 in parallel
 
 ##License
 
