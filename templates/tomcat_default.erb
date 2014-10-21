@@ -22,7 +22,7 @@ JAVA_HOME=<%= @java_home %>
 # exactly one CPU chip that contains one or two cores, you should also add
 # the "-XX:+CMSIncrementalMode" option.
 <% if @java_opts -%>
-JAVA_OPTS="<% @java_opts.each do |param| %><%= param %> <% end %>"
+JAVA_OPTS="<% @java_opts.each_line do |param| %><%= param %> <% end %>"
 <% end -%>
 
 # To enable remote debugging uncomment the following line.
